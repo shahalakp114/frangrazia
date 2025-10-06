@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            margin-top: 10px;
+        }
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #003366;
+            margin-left: 50px;
+        }
+        .menu {
+            display: flex;
+            gap: 30px;
+            margin-left: 250px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .menu a:hover {
+            font-weight: 600;
+            color: #003366;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            padding: 5px 10px;
+            margin-right: 60px;
+        }
+        .search-box input {
+            border: none;
+            outline: none;
+            padding: 5px;
+        }
+        .icons {
+            display: flex;
+            gap: 15px;
+            font-size: 18px;
+            color: #333;
+            margin-right: 50px;
+        }
+        .icons i {
+            cursor: pointer;
+        }
+        .perfume{
+            margin-left: -7px;
+        }
+        .right-side {
+            display: flex;
+            align-items: center;
+        }
+        .details{
+            margin-left: 270px;
+            margin-top: -230px;
+        }
+        .details .a{
+            font-size: 22px;
+            font-weight: bold;
+            font-family: sans-serif;
+            
+        }
+        .details .b{
+            margin-top: 10px;
+            font-family: sans-serif;
+            font-size: 15px;
+        }
+        .details .c{
+            margin-left: 80px;
+            margin-top: -20px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        .details .c {
+            display: flex;
+            gap: 10px;
+        }
+        .quantity-box {
+            display: inline-flex;
+            align-items: center;
+            border: 2px solid #131414;
+            border-radius: 5px;
+            margin-top: 13px;
+
+        }
+        .quantity-box button {
+            background: none;
+            border: none;
+            font-size: 22px;
+            width: 18px;
+            height: 33px;
+            cursor: pointer;
+            color: #0d0d0e;
+            margin-top: -6px;
+        }
+        .quantity-box input {
+            width: 50px;
+            text-align: center;
+            border: none;
+            font-size: 18px;
+            outline: none;
+        }
+        .details .e{
+            display: flex;
+            gap: 15px;
+            margin-top: 8px;
+            font-family: sans-serif;
+        }
+        .details .e1{
+            font-weight: bolder;
+            font-size: 26px;
+        }
+        .details .e2{
+            font-size: small;
+            margin-top: 10px;
+            color: #333;
+        }
+        .details .e3{
+            font-size: small;
+            font-weight: 700;
+            margin-top: 10px
+        }
+        .details .g2{
+            font-size: 13px;
+            color: #0d0d0e;
+            margin-top: 5px;
+            font-family: sans-serif;
+        }
+        .g3{
+            font-size: 14px;
+            margin-top: 5px;
+            color: #2bca2d;
+        }
+        .bd1{
+            border: 1px solid #cfd3d3;
+            width: 750px;
+            height: 320px;
+            margin-top: 50px;
+            margin-left: 50px;
+            border-radius: 8px;
+        }
+        .price{
+            margin-left: 900px;
+            margin-top: -280px;
+        }
+        .price .p1{
+            font-size: 22px;
+            font-weight: bolder;
+            font-family: sans-serif;
+        }
+        .price .p2{
+            margin-top: 20px;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .price .p3{
+            margin-left: 280px;
+            margin-top: -24px;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .price .p4{
+            margin-top: 20px;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight:bold;
+        }
+        .price .p5{
+            margin-left: 280px;
+            margin-top: -24px;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .price .p6{
+            margin-top: 20px;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .price .p7{
+            margin-left: 280px;
+            margin-top: -24px;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        hr{
+            margin-left: 900px;
+            width: 400px;
+        }
+        .p8{
+            margin-left: 900px;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .p9{
+            margin-left: 1200px;
+            margin-top: -28px;
+            font-family: sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+        }
+        .personal-box h4 {
+            margin: 0 0 15px 0;
+            margin-top: 90px;
+            margin-left: 50px;
+            font-family: sans-serif;
+            font-weight: bold;
+            }
+        .personal-box button {
+            width: 150px;
+            margin-left: 50px;
+            padding: 6px 12px;
+            padding-left: 6px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background: #fff;
+            cursor: pointer;
+            background-color: rgb(232, 227, 227);
+            }
+        
+        .personal-box .address {
+            border: 1px solid #b9b7b7;
+            width: 750px;
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 8px;
+            margin-left: 50px;
+            }
+        .personal-box .edit {
+            float: right;
+            color: blue;
+            cursor: pointer;
+            font-size: 14px;
+            }
+            .ad{
+                margin-top: 20px;
+                margin-left: 50px;
+                font-weight: bold;
+                font-size: large;
+                font-family: sans-serif;
+            }
+            .rohan{
+                margin-left: 20px;
+                margin-top: 15px;
+            }
+            .rd{
+                margin-top: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+                font-size: 14px;
+                margin-left: 20px;
+            }
+            .rn{
+                margin-top: 25px;
+            }
+            
+            .payment-box h4 {
+            margin-left: 40px;
+            margin-top: 20px;
+        }
+            .payment-box{
+                border-radius: 8px;
+                border: 1px solid #c7c4c4;
+                width: 460px;
+                margin-top: -320px;
+                margin-left: 850px;
+
+            }
+            .payment-option {
+            margin: 10px 0;
+            }
+            .pay1{
+            margin-left: 44px;
+            margin-top: 20px;
+            }
+            .pay1 input{
+                margin-left: 250px;
+            }
+            .pay2{
+            margin-left: 44px;
+            margin-top: 15px;
+            }
+            .pay2 input{
+                margin-left: 138px;
+            }
+            .pay3{
+            margin-left: 44px;
+            padding-top: 5px;
+            }
+            .pay3 input{
+                margin-left: 88px;
+            }
+            .pay4{
+            margin-left: 44px;
+            margin-top: 15px;
+            }
+            .pay4 input{
+                margin-left: 206px;
+            }
+            .pay5{
+            margin-left: 44px;
+            margin-top: 15px;
+            }
+            .pay5 input{
+                margin-left: 245px;
+            }
+            .pay-btn {
+            margin-top: 20px;
+            width: 100%;
+            background: #012b47;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            }
+            .pay-btn:hover {
+            background: #0c5088;
+            }
+            .pay-btn{
+                width: 350px;
+                margin-left: 50px;
+            }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="topbar">
+            <div class="logo">Fragranza</div>
+            <div class="menu">
+                <a href="project-home.html">Home</a>
+                <a href="project-products.html">Products</a>
+                <a href="#">Gifting</a>
+                <a href="project-last.html">About</a>
+            </div>
+            <div class="right-side">
+                <div class="search-box">
+                    <i class="fa fa-search"></i>
+                    <input type="text" placeholder="Search Here">
+                </div>
+                <div class="icons">
+                    <button><a href="project-secondlast.html"><i class="fa fa-shopping-cart"></i></a></button>
+                    <i class="fa-regular fa-bell" style="border: 1px solid #ccc;"></i>
+                    <i class="fa-regular fa-user" style="border: 1px solid #ccc;"></i>
+                </div>
+            </div>
+        </div>
+        <div class="bd1">
+            <div class="perfume">
+                <img src="Frame 133.png" width="280px" height="245px" style="margin-top: 35px;" >
+            </div>
+            <div class="details">
+                <div class="a">
+                    Autograph eau de parfum 100ml for men
+                </div>
+                <div class="b">
+                    Autograph
+                </div>
+                <div class="c">
+                    4.5 
+                    <i class="fa-solid fa-star" style="color: #2bca2d;"></i>
+                </div>
+                <div class="quantity-box">
+                    <button>-</button>
+                    <input type="text" value="1">
+                    <button style="margin-right: 9px;">+</button>
+                </div>
+                <div class="e">
+                    <div class="e1">Rs 899</div>
+                    <div class="e2"><del>Rs 2000</del></div>
+                    <div class="e3" style="color: #2bca2d;">61%off</div>
+                </div>
+                <div class="f">
+
+                </div>
+                <div class="g">
+                    <div class="g2">
+                        Delivery by August 29, Free delivery
+                        <div class="g2i">
+                            <i class="fa-thin fa-truck" style="color: #0f0f0f;"></i>
+                        </div>
+                    </div>
+                    <div class="g3">
+                        7 day return policy
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bd2">
+            <div class="price">
+                <div class="p1">
+                    Price Details
+                </div>
+                <div class="p2">
+                    Price (1 item)
+                </div>
+                <div class="p3">
+                    Rs 899 <del>Rs 2000</del>
+                </div>
+                <div class="p4">
+                    Discount (61%)
+                </div>
+                <div class="p5">
+                    Rs 1101
+                </div>
+                <div class="p6">
+                    Delivery Charge
+                </div>
+                <div class="p7">
+                    Free Delivery
+                </div>       
+            </div>
+            <div class="line">
+                <hr>
+            </div>
+            <div class="p8">
+                Total amount
+            </div>   
+            <div class="p9">
+                Rs 899
+            </div>       
+        </div>
+        <div class="personal-box">
+            <h4>Personal Details</h4>
+            <button style=>Add address +</button>
+            <button style="background-color: #03374c; color:white"><a href="project-home.html" style="color: white; text-decoration:none">Home</a></button>
+            <button>Office</button>
+            <div class="ad">
+                Address
+            </div>
+            <div class="address">
+                <div class="edit">Edit</div>
+                <div class="rohan">
+                    <strong>Rohan Jaison</strong><br>
+                </div>
+                <div class="rd">
+                    Apartment No. 104, Emerald Heights Opposite Lulu Mall Edappally,<br>
+                    Kochi Kerala 682024<br>
+                    <div class="rn">
+                        +91 9876543210
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="payment-box">
+            <h4>Payment Methods</h4>
+                <div class="pay1">
+                    <i class="fa-brands fa-google-pay"></i> Google Pay
+                    <input type="radio" name="pay"> 
+                </div>
+                <div class="pay2">
+                    <i class="fa-solid fa-money-bill-wave"></i> cash on delivery (cash\UPI)
+                    <input type="radio" name="pay"> 
+                </div>
+                <div class="pay3"> 
+                    <i class="fa-solid fa-wallet"></i> Paytm / PhonePe / Amazon Pay
+                    <input type="radio" name="pay">
+                </div>
+                <div class="pay4">
+                <i class="fa-regular fa-credit-card"></i> Credit / Debit Card
+                    <input type="radio" name="pay"> 
+                </div>
+                <div class="pay5">
+                    <i class="fa-solid fa-building-columns"></i> Net Banking
+                    <input type="radio" name="pay">
+                </div>
+                <button class="pay-btn">Pay Now</button>
+        </div>
+
+        
+
+
+
+    </div>
+</body>
+</html>

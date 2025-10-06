@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            margin-top: 10px;
+        }
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #003366;
+            margin-left: 50px;
+        }
+        .menu {
+            display: flex;
+            gap: 30px;
+            margin-left: 250px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .menu a:hover {
+            font-weight: 600;
+            color: #003366;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            padding: 5px 10px;
+            margin-right: 60px;
+        }
+        .search-box input {
+            border: none;
+            outline: none;
+            padding: 5px;
+        }
+        .icons {
+            display: flex;
+            gap: 15px;
+            font-size: 18px;
+            color: #333;
+            margin-right: 50px;
+        }
+        .icons i {
+            cursor: pointer;
+        }
+        .perfume{
+            margin-left: -7px;
+        }
+        .right-side {
+            display: flex;
+            align-items: center;
+        }
+        .icons button{
+            border-radius: 50%;
+        }
+
+        .cart,.small-cart{
+            padding-left: 20px;
+        }
+        body {
+        font-family: Arial, sans-serif; 
+        background-color: #f8f9fa;
+        }
+       .checkout-box {
+          width: 300px;
+          background: #fff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: Opx 4px 10px rgba(0,0,0,0.1);
+          margin: 50px auto;
+        }
+      .checkout-box h2 {
+          margin-bottom: 20px;
+          font-size: 22px;
+          font-weight: bold;
+        }
+      .checkout-item {
+          display: flex;
+          justify-content: space-between;
+          margin: 8px 0;
+          font-size: 16px;
+        }
+      .checkout-item span {
+           font-weight: bold;
+        }
+      .checkout-item .free {
+           color: green;
+           font-weight: bold;
+        }
+      .total {
+           display: flex;
+           justify-content: space-between;
+           margin-top: 15px;
+           font-size: 18px;
+           font-weight: bold;
+        }
+        .checkout-box{
+        margin-left: 990px;
+        margin-top:-20px;
+        }
+        .btn button{
+            margin-left: 990px;
+            height: 40px;
+            width: 330px;
+            border-radius: 5px;
+            padding: -20px;
+            margin-right: -70px;
+            margin-top: -80px;
+        }
+        .safe{
+            padding-left: 1030px;
+            margin: 20px;
+            color: gray;
+        }
+        .product-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            margin: 10px;
+            margin-top: -370px;
+            align-items: flex-start;
+            max-width: 680px;
+            font-family: Arial, sans-serif;
+        }
+
+        .product-image-container,.product-image-container1,.product-image-container2 {
+            flex-shrink: 0;
+            right: 90px;
+        }
+
+        .product-image,.product-image1 ,.product-image2{
+            width: 100px;
+            height: auto;
+            display: block;
+        }
+
+        .product-details,.product-details1 ,.product-details2{
+            flex-grow: 1;
+        }
+
+        .product-title,.product-title1,.product-title2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .quantity-selector,.quantity-selector1,.quantity-selector2 {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: fit-content;
+            margin-bottom: 15px;
+        }
+
+        .qty-button,.qty-button1,.qty-button2 {
+            border: none;
+            background: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .qty-display ,.qty-display1,.qty-display2{
+            font-size: 16px;
+            padding: 5px 10px;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+        }
+
+        .price-info,.price-info1,.price-info2 {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 20px;
+        }
+
+        .current-price,.current-price1,.current-price2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .original-price,.original-price1 ,.original-price2{
+            font-size: 16px;
+            color: #999;
+            text-decoration: line-through;
+            margin-right: 10px;
+        }
+
+        .discount-badge,.discount-badge1 ,.discount-badge2{
+            font-size: 16px;
+            color: green;
+            font-weight: bold;
+        }
+
+        .action-buttons,.action-buttons1,.action-buttons2 {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn,.btn1 .btn2{
+            flex-grow: 1;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-delete,.btn-delete1,.btn-delete2 {
+            border: 1px solid #c0392b;
+            background-color: #fff;
+            color: #c0392b;
+        }
+
+        .btn-share,.btn-share1,.btn-share2 {
+            border: 1px solid #333;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .btn-buy,.btn-buy1,.btn-buy2 {
+            border: none;
+            background-color: #1a4358;
+            color: #fff;
+            font-weight: bold;
+        }
+        .product-card1{
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 10px;
+            display: flex;
+            align-items: flex-start;
+            max-width: 680px;
+            font-family: Arial, sans-serif;        
+        }
+        .product-card2{
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            margin: 10px;
+            align-items: flex-start;
+            max-width: 680px;
+            font-family: Arial, sans-serif;
+        }
+
+</style>
+</head>
+<body>
+  <div class="main">
+        <div class="topbar">
+            <div class="logo">Fragranza</div>
+            <div class="menu">
+                <a href="project-home.html">Home</a>
+                <a href="project-products.html">Products</a>
+                <a href="#">Gifting</a>
+                <a href="project-last.html">About</a>
+            </div>
+            <div class="right-side">
+                <div class="search-box">
+                    <i class="fa fa-search"></i>
+                    <input type="text" placeholder="Search Here">
+                </div>
+                <div class="icons">
+                  <div class="icon-btn"><button style="background-color: #03374c;color:white"><i class="fa-solid fa-cart-shopping"></i></i></button></div>
+                  <div class="icon-btn"><button><i class="fa fa-bell"></i></button></div>
+                  <div class="icon-btn"><button><i class="fa fa-user"></i></button></div>
+
+                </div>
+        </div>
+
+    </div> 
+            <div class="cart">
+                <h2>Cart</h2>
+            </div>
+            <div class="small-cart">
+                Home > cart
+            </div>
+  </div>
+            <div class="checkout-box"> <h2>Check Out</h2>
+
+            <div class="checkout-item">
+            <div>Price (3 item) </div> 
+            <span>Rs 3,097</span> </div>
+            <div class="checkout-item">
+            <div>Discount</div> 
+              <span>Rs 4,404</span>
+            </div>
+            <div class="checkout-item">
+           <div>Delivery Charge</div> 
+           <span class="free">Free</span>
+           </div>
+           <div class="total">
+           <div>Total Amount</div> 
+           <div>Rs 3,493</div>
+           </div>
+            </div>
+           <div class="btn">
+            <button style="width: 330px;background-color:rgb(12, 49, 80); height: 45px;" ><div class="sign"><a href="project-product3.html" style="color: #fff;text-decoration: none;">Proceed to  Buy</a></div></button>
+           </div>
+        
+           <div class="safe">safe and secure payments.Easy <br>returns.100 % Authentic Products</div>
+        </div>
+    </div>
+        <div class="product-card">
+        
+        <div class="product-image-container">
+            <img src="Frame 133.png" alt="Autograph eau de parfum bottle and box" class="product-image">
+        </div>
+
+        <div class="product-details">
+            
+            <h2 class="product-title">
+                Autograph eau de parfum 100ml for men
+            </h2>
+            
+            <div class="quantity-selector">
+                <button class="qty-button">-</button>
+                <span class="qty-display">1</span>
+                <button class="qty-button">+</button>
+            </div>
+            
+            <div class="price-info">
+                <span class="current-price">Rs 899</span>
+                <span class="original-price">Rs 2000</span>
+                <span class="discount-badge">61% off</span>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn btn-delete">
+                    Delete
+                </button>
+                <button class="btn btn-share">
+                    Share
+                </button>
+                <button class="btn btn-buy">
+                  <a href="project-product3.html" style="text-decoration: none; color:white">  Buy </a>
+                </button>
+            </div>
+            
+        </div>
+    </div>
+    <div class="product-card1">
+           <div class="product-image-container1">
+             <img src="Frame 133 (1).png" alt="" style="width: 100px; height: 100px;">
+           </div>
+         <div class="product-details1">
+                <h2 class="product-title1">
+                    Autograph eau de parfum 100ml for men
+                </h2>
+             <div class="quantity-selector1">
+                 <button class="qty-button1">-</button>
+                <span class="qty-display1">1</span>
+                <button class="qty-button1">+</button>
+            </div>
+                <div class="price-info1">
+                  <span class="current-price1">Rs 899</span>
+                  <span class="original-price1">Rs 2000</span>
+                  <span class="discount-badge1">61% off</span>
+            </div>
+            <div class="action-buttons1">
+                <button class="btn btn-delete1">
+                    Delete
+                </button>
+                <button class="btn btn-share1">
+                    Share
+                </button>
+                <button class="btn btn-buy1">
+                  <a href="project-product3.html" style="text-decoration: none; color:white">  Buy </a>
+                </button>
+            </div>
+            
+        </div>
+    </div>
+       <div class="product-card2">
+         <div class="product-image-container2">
+              <img src="Frame 133 (3).png" alt="" style="width: 100px; height:100px;">
+
+           </div>
+         <div class="product-details2">
+               <h2 class="product-title2">
+                    Autograph eau de parfum 100ml for men
+                </h2>
+             <div class="quantity-selector2">
+                 <button class="qty-button2">-</button>
+                <span class="qty-display2">1</span>
+                <button class="qty-button2">+</button>
+            </div>
+             <div class="price-info2">
+                  <span class="current-price2">Rs 899</span>
+                  <span class="original-price2">Rs 2000</span>
+                  <span class="discount-badge2">61% off</span>
+            </div>
+               <div class="action-buttons2">
+                <button class="btn btn-delete2">
+                    Delete
+                </button>
+                <button class="btn btn-share2">
+                    Share
+                </button>
+                <button class="btn btn-buy2">
+                   <a href="project-product3.html" style="text-decoration: none; color:white"> Buy</a>
+                </button>
+            </div>
+            
+        </div>
+    </div>
+    <div class="footer">
+
+        <img src="Footer.png" alt="" style="width: 1330px;height:350px">
+    </div>
+                      
+ 
+
+
+    
+
+
+    </div>
+
+</body>
+</html>

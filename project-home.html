@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            margin-top: 10px;
+        }
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #003366;
+            margin-left: 50px;
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+            margin-left: 200px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .menu a:hover {
+            font-weight: 600;
+            color: #003366;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            padding: 5px 10px;
+            margin-right: 35px;
+        }
+        .search-box input {
+            border: none;
+            outline: none;
+            padding: 5px;
+        }
+        .icons {
+            display: flex;
+            gap: 15px;
+            font-size: 18px;
+            color: #333;
+            margin-right: 50px;
+        }
+        .icons i {
+            cursor: pointer;
+        }
+        .icons button{
+            border-radius: 50%;
+            background-color: white;
+            border: 1px solid #ccc;
+
+        }
+        .bt{
+            text-decoration: none;
+        }
+
+        .right-side {
+            display: flex;
+            align-items: center;
+        }
+        .secbar{
+            height: 50px;
+            width: 1350px;
+            background-color: #03374c;
+            display: flex;
+            color: #ddd;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+            font-size: 15px;
+        }
+        .third{
+            margin-top: 35px;
+            margin-left: 37px;
+        }
+        .third button{
+            position: absolute;
+            bottom: 300px; 
+            left: 90px;
+            background: rgb(239, 235, 235);
+            color: black;
+           border: none;
+           border-radius: 5px;
+           padding: 15px;
+           cursor: pointer;
+           height: 50px;
+           width: 120px;
+           }
+     
+     .third a:link{
+        text-decoration: none;
+        color: black;
+     }
+
+        .btn i{
+         top:10px;
+        }
+        .four{
+            display: flex;
+            margin-left: 35px;
+            margin-top: 50px;
+            gap: 30px;
+        }
+        .fifth{
+            display: flex;
+            background-color: white;
+            border: 2px solid #cac5c5;
+            border-radius: 10px;
+            width: 1268px;
+            height: 180px;
+            margin-left: 30px;
+            margin-top: 60px;
+        }
+        .fifth .a{
+            margin-top: 60px;
+            margin-left: 40px;
+            font-size: 60px;
+        }
+        .fifth .a1{
+            margin-left: 30px;
+            margin-top: 48px;
+            font-size:x-large;
+            font-weight: 700;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .fifth .a2{
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin-top:88px;
+            font-weight: 400;
+            margin-left: -289px;
+            font-size: 15px;
+        }
+        .fifth .b{
+            margin-top: 56px;
+            margin-left: 140px;
+            font-size: 60px;
+        }
+        .fifth .b1{
+            margin-left: 20px;
+            margin-top: 48px;
+            font-size: x-large;
+            font-weight: 700;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .fifth .b2{
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin-top:88px;
+            font-weight: 400;
+            margin-left:-189px;
+            font-size: 15px;
+        }
+        .fifth .c{
+            margin-top: 49px;
+            margin-left: 45px;
+            font-size: 60px;
+        }
+        .fifth .c1{
+            margin-left: 20px;
+            margin-top: 48px;
+            font-size: x-large;
+            font-weight: 700;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .fifth .c2{
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin-top:88px;
+            font-weight: 400;
+            margin-left: -265px;
+            font-size: 15px;
+        }
+       .price{
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .old-price{
+            font-size: 16px;
+            color: #999;
+            text-decoration: line-through;
+        }
+        .sug{
+            margin-top: 70px;
+            margin-left: 33px;
+        }
+        .s1{
+            display: flex;
+            font-size: 23px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        .s1 p{
+            margin-left: 20px;
+            margin-top: 1px;
+        }
+        .s2{
+            margin-left: 1190px;
+            margin-top: -35px;
+        }
+        .s2 button{
+            border-radius: 15px;
+            border-color: #afadad;
+            background-color: white;
+            border-width: 1px;
+            font-weight: bold;
+            font-size: large;
+        }
+        .perfume1{
+            display: flex;
+            margin-left: 38px;
+            margin-top: 50px;
+            gap: 50px;
+        }
+        .cart1{
+            display: flex;
+            margin-left: 49px;
+            gap: 91px;
+        }
+        .cart1 button{
+            cursor: pointer;
+        }
+        .p{
+            margin-top: 80px;
+            font-size: 20px;
+            font-weight:500;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .limited{
+            display: flex;
+            margin-left: 60px;
+            gap: 20px;
+            margin-top: 80px;
+        }
+        .ex{
+            margin-top: 70px;
+            margin-left: 53px;
+        }
+        .ex1{
+            display: flex;
+            font-size: 23px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        .ex1 p{
+            margin-left: 0px;
+            margin-top: 1px;
+        }
+        .ex2{
+            margin-left: 1148px;
+            margin-top: -35px;
+        }
+        .ex2 button{
+            border-radius: 15px;
+            border-color: #afadad;
+            background-color: white;
+            border: none;
+            font-weight: bold;
+            font-size: large;
+        }
+        .perfume2{
+            display: flex;
+            margin-left: 50px;
+            margin-top: 50px;
+            gap: 80px;
+        }
+        .perfume2 p{
+            margin: 63px;
+            margin-top: 10px;
+        }
+        
+        .sug2{
+            margin-top: 40px;
+            margin-left: 33px;
+        }
+        .su1{
+            display: flex;
+            font-size: 23px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        .su1 p{
+            margin-left: 20px;
+            margin-top: 1px;
+        }
+        .su2{
+            margin-left: 1190px;
+            margin-top: -70px;
+        }
+        .su2 button{
+            border-radius: 15px;
+            border-color: #afadad;
+            background-color: white;
+            border-width: 1px;
+            font-weight: bold;
+            font-size: large;
+        }
+        .perfume3{
+            display: flex;
+            margin-left: 38px;
+            margin-top: 50px;
+            gap: 50px;
+        }
+        .cart3{
+            display: flex;
+            margin-left: 49px;
+            gap: 91px;
+        }
+        .cart1 button{
+            cursor: pointer;
+        }
+        .last{
+            margin-top: 35px;
+            margin-left: 50px;
+        }
+        .last button{
+            height: 50px; 
+            width: 180px;
+            border-radius: 5px;
+           margin-right: 100px;
+           left: 90px;
+           bottom: -3055px;
+           position: absolute;
+        }
+        .last a:link{
+            text-decoration: none;
+        }
+      .sign button {
+    padding: 10px 20px;
+    background-color: #03374c;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    transition: 0.3s;
+    margin-top: 150px; 
+}
+.image1:hover img{
+    transform: scale(1.1);
+}
+.image2:hover img{
+    transform: scale(1.1);
+}
+.image3:hover img{
+    transform: scale(1.1);
+}
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="topbar">
+            <div class="logo">Fragranza</div>
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="project-products.html">Products</a>
+                <a href="#">Gifting</a>
+                <a href="project-last.html">About</a>
+            </div>
+            <div class="right-side">
+                <div class="search-box">
+                    <i class="fa fa-search"></i>
+                    <input type="text" placeholder="Search Here">
+                </div>
+                <div class="icons">
+                    <button><a href="project-secondlast.html"><i class="fa fa-shopping-cart"></i></a></button>
+                    <button><i class="fa-regular fa-bell"></i></button>
+                    <button><i class="fa-regular fa-user"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="secbar">
+            ENJOY  FESTIVE  DISCOUNTS! FREE SHIPPING ABOVE 999!
+        </div>
+          <div class="third">
+    <img src="Frame 1.jpeg"  width="1270px" height="370px" alt="Sample Image">
+    <button>  <a href="project-products.html" class="link-underline-none">Shop Now</a></button>
+  </div>
+        <div class="four">
+            <img src="Frame 10 (1).png" height="235px" width="403px" >
+            <img src="Frame 12.png" height="235px" width="403px" >
+            <img src="Frame 11.png" height="235px" width="403px">
+        </div>
+        <div class="fifth">
+            <div class="a">
+            <i class="fa-regular fa-truck"></i></div>
+            <div class="a1">Fast and Reliable Delivery</div>
+            <div class="a2">Get your orders delivered on <br>time, every time</div>
+            <div class="b">
+            <i class="fa-regular fa-circle-check"></i>
+            </div>
+            <div class="b1">Secure Payments</div>
+            <div class="b2">Shop with confidence using our <br> encrypted payment gateways</div>
+            <div class="c">
+            <i class="fa-regular fa-handshake"></i></i></div>
+            <div class="c1">24/7 Customer Support</div>
+            <div class="c2">We're here to assist you anytime <br>anywhere</div>
+        </div>
+        <div class="sug">
+            <div class="s1">
+                Featured <p style="color:#003366;">Collections</p>
+            </div>
+            <div class="s2">
+                <button><</button>
+                <button>></button>
+            </div>
+        </div>
+        <div class="perfume1">
+            <img src="Product.png" height="420px" width="340px">
+            <img src="Product (2).png" height="420px" width="340px">
+            <img src="Product (3).png" height="420px" width="340px">
+            <img src="Product (4).png" height="420px" width="120px">
+        </div>
+        <div class="cart1">
+            <p>Autograph Eau De Parfum 100ml<br>
+             For Men<br>
+            <span class="price">RS 650</span>
+            <span class="old-price">RS 1400</span><br>
+            <button style="width: 300px;background-color:rgb(12, 49, 80); height: 40px;" ><div class="sign"><a href="project-secondlast.html" style="color: #fff;text-decoration: none;">Add to Cart</a></div></button>
+            <p>Kyros Eau De Parfum 100ml<br>
+            For Men<br>
+            <span class="price">RS 899</span>
+            <span class="old-price">RS 2000</span><br>
+            <button style="width: 300px;background-color:rgb(12, 49, 80); height: 40px;" ><div class="sign"><a href="project-secondlast.html" style="color: #fff;text-decoration: none;">Add to Cart</a></div></button>
+            <p>Autograph Eau De Parfum 100ml<br >
+            For men<br>
+            <span class="price">RS 999</span>
+            <span class="old-price">RS 2241</span><br>
+            <button style="width: 300px;background-color:rgb(12, 49, 80); height: 40px;" ><div class="sign"><a href="project-secondlast.html" style="color: #fff;text-decoration: none;">Add to Cart</a></div></button>
+            <p>Royal Eau <br>
+            For Men<br>
+            <span class="price">RS 650</span>
+            <span class="old-price"></span><br>
+            <button style="width: 110px;background-color:rgb(12, 49, 80); height: 40px;" ><div class="sign"></div></button>
+        </div>
+        <div class="p" style="text-align: center;">
+            "It's an art. A craft. A science. At Fraganzia, we're in <br> the business of creating memories that last forever <br> through our fragrances."
+        </div> 
+        <div class="limited">
+            <div class="image1"> <img src="Frame 40 (1).png" height="430px" width="440px"></div>
+           <div class="image2"> <img src="Frame 41.png" height="430px" width="350px" ></div>
+            <div class="image3"><img src="Frame 39.png" height="430px" width="350px" ></div>
+        </div>
+        <div class="ex">
+            <div class="ex1">
+                Explore<p style="color:#003366;">Catogories</p>
+            </div>
+            <div class="ex2">
+                <button style="text-decoration: underline;">see all</button>
+            </div>
+        </div>
+        <div class="perfume2">
+            <div class="f">
+            <img src="Frame 42.png" height="240px" width="210px">
+             <p>Eau De parfum</p>
+            </div>
+             <div class="f">
+            <img src="Frame 42 (1).png" height="240px" width="210px">
+             <p> Concentrated</p>
+             </div>
+             <div class="f">
+            <img src="Frame 42 (2).png" height="240px" width="210px">
+            <p>Deodorants</p>
+            </div>
+            <div class="f">
+            <img src="Frame 42 (3).png" height="240px" width="210px">
+             <p>Body Mist</p>
+            </div>
+            <div class="f">
+            <img src="Frame 42 (4).png" height="240px" width="210px">
+            <p> Combo</p>
+            </div>
+        </div>
+        <div class="sug2">
+            <div class="su1">
+                <p>Offers Zone</p>
+            </div>
+            <div class="su2">
+                <button><</button>
+                <button>></button>
+            </div>
+        </div>
+        <div class="perfume3">
+            <img src="Product (5).png" height="420px" width="340px">
+            <img src="Product (6).png" height="420px" width="340px">
+            <img src="Product (7).png" height="420px" width="340px">
+            <img src="Product (8).png" height="420px" width="120px">
+        </div>
+        <div class="cart3">
+             <p>Royal Eau De Parfum 100ml<br>
+            For Men<br>
+            <span class="price">RS 650</span>
+            <span class="old-price">RS 1400</span><br>
+            <button style="width: 300px;background-color:rgb(12, 49, 80); height: 40px;" ><div class="sign"><a href="project-secondlast.html" style="color: #fff;text-decoration: none;">Add to Cart</a></div></button>
+             <p>Kyros Eau De Parfum 100ml For Men<br>
+            For Men<br>
+            <span class="price">RS 899</span>
+            <span class="old-price">RS2000</span><br>
+            <button style="width: 300px;background-color:rgb(12, 49, 80); height: 40px;" ><div class="sign"><a href="project-secondlast.html" style="color: #fff;text-decoration: none;">Add to Cart</a></div></button>
+             <p>Royal Eau De Parfum 100ml<br>
+            For Men<br>
+            <span class="price">RS 650</span>
+            <span class="old-price">RS 1400</span><br>
+            <button style="width: 300px;background-color:rgb(12, 49, 80); height: 40px; " ><div class="sign"><a href="project-secondlast.html" style="color: #fff;text-decoration: none;">Add to Cart</a></div></button>
+            <p>Autograp<br>
+            For Men<br>
+            <span class="price">RS 699</span>
+            <span class="old-price"></span><br>
+            <button style="width: 110px;background-color:rgb(12, 49, 80); height: 40px; " ><div class="sign"></div></button>
+        </div>
+        <div class="last">
+            <img src="Frame 33.png" width="1210px" height="230px">
+            <button style="background-color: #03374c;"><a href="project-products.html" style="background-color: #03374c; color:white; text-decoration:none">Shop Now</a></button>
+        </div>
+        <div class="detail2" style="margin-top: 40px;">
+            <img src="Footer.png" width="1325px" height="350px" style="margin-left: 10px;">
+        </div>
+    </div>
+</body>
+</html>
